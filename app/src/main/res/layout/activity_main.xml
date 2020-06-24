@@ -5,72 +5,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    app:layout_constraintCircleRadius="500dp"
     tools:context=".MainActivity">
 
     <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="168dp"
+        android:id="@+id/seekBarPeso"
+        android:layout_width="0dp"
         android:layout_height="26dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/background_light"
+        android:indeterminate="false"
+        android:max="300"
+        android:progressTint="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/txtAltura"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPeso" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtPeso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar"
+        android:text="Peso: 0kg"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarPeso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txtAltura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar2"
+        android:text="Altura: 0m"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarAltura"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBarPeso" />
 
     <SeekBar
-        android:id="@+id/seekBar2"
-        android:layout_width="164dp"
+        android:id="@+id/seekBarAltura"
+        android:layout_width="0dp"
         android:layout_height="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/background_light"
+        android:max="3"
+        android:progressTint="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/btnCalcular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/txtAltura" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnCalcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Button"
+        android:text="@string/calcular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBarAltura" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="98dp"
         android:layout_height="98dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/txtPeso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logoImc" />
+        app:srcCompat="@drawable/logo_imc" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

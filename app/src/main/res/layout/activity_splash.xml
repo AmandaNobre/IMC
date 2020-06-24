@@ -16,14 +16,14 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logoImc" />
+        app:srcCompat="@drawable/logo_imc" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="Made By"
+        android:text="@string/made_by"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="70dp"
-        android:text="Amanda Nobre"
+        android:text="@string/criadora"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
