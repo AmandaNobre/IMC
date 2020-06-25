@@ -15,21 +15,21 @@ class ResultadoActivity : AppCompatActivity() {
         val altura = intent.getStringExtra("KEY_ALTURA").toInt()
 
         val imc = peso / (altura * altura)
-        txtResultado.text = imc.toString()
+        txtResultado.text = "IMC: " + imc.toString()
 
-        //Definindo lassificação 
+        //Definindo lassificação
         if (imc < 18.5){
-            txtCategoria.text = "Abaixo do Peso"
+            txtCategoria.text = "Categoria: Abaixo do Peso"
         }else if (imc >= 18 && imc <= 24){
-            txtCategoria.text = "Peso Ideal"
+            txtCategoria.text = "Categoria: Peso Ideal"
         }else if (imc >= 25 && imc <= 29){
-            txtCategoria.text = "Levemente Acima do Peso"
+            txtCategoria.text = "Categoria: Levemente Acima do Peso"
         }else if(imc >= 30 && imc <= 34){
-            txtCategoria.text= "Obesidade grau 1"
+            txtCategoria.text= "Categoria: Obesidade grau 1"
         }else if (imc >= 35 && imc <= 39){
-            txtCategoria.text = "Obesidade Grau 2"
+            txtCategoria.text = "Categoria: Obesidade Grau 2"
         }else{
-            txtCategoria.text = "Obesidade 3"
+            txtCategoria.text = "Categoria: Obesidade 3"
         }
 
         btnRefazer.setOnClickListener {

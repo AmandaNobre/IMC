@@ -21,16 +21,17 @@
 
     <TextView
         android:id="@+id/txtResultado"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:text="@string/imc"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@+id/txtCategoria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        tools:text="IMC" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/btnRefazer"
@@ -46,11 +47,12 @@
 
     <TextView
         android:id="@+id/txtCategoria"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Categoria"
+        android:text="@string/categoria"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@+id/btnRefazer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
