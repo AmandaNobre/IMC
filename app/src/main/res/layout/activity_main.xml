@@ -16,7 +16,7 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="@android:color/background_light"
         android:indeterminate="false"
-        android:max="300"
+        android:max="3000"
         android:progressTint="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@+id/txtAltura"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,25 +26,35 @@
 
     <TextView
         android:id="@+id/txtPeso"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
         android:text="@string/peso"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@+id/seekBarPeso"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
-        android:id="@+id/txtAltura"
+        android:id="@+id/txtPesoDecimal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="68dp"
+        android:text="0.0"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarPeso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintStart_toEndOf="@+id/txtPeso" />
+
+    <TextView
+        android:id="@+id/txtAltura"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
         android:text="@string/altura"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@+id/seekBarAltura"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seekBarPeso" />
 
@@ -55,7 +65,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@android:color/background_light"
-        android:max="3"
+        android:max="300"
         android:progressTint="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@+id/btnCalcular"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,9 +78,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimaryDark"
         android:shadowColor="@color/colorPrimaryDark"
         android:text="@string/calcular"
-        android:textColor="@android:color/background_dark"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -88,5 +99,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_imc" />
+
+    <TextView
+        android:id="@+id/txtAlturaDecimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="68dp"
+        android:text="0.0"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/seekBarAltura"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toEndOf="@+id/txtAltura" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

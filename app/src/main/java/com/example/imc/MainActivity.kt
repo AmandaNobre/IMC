@@ -13,12 +13,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var alturaDecimal = 0.0
+        var pesoDecimal = 0.0
+
         //Configurando a seekBar peso
         val pesoSeekBar: SeekBar
         pesoSeekBar = findViewById(R.id.seekBarPeso)
         pesoSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                txtPeso.text = "Peso: " + progress + "KG"
+                pesoDecimal = progress/10.toDouble()
+                txtPesoDecimal.text = pesoDecimal.toString()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
@@ -30,18 +34,25 @@ class MainActivity : AppCompatActivity() {
         alturaSeekBar = findViewById(R.id.seekBarAltura)
         alturaSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                txtAltura.text = "Altura: " + progress + "m"
+                alturaDecimal = progress/100.toDouble()
+                txtAlturaDecimal.text = alturaDecimal.toString()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
         btnCalcular.setOnClickListener {
-            val mIntent = Intent(this, ResultadoActivity::class.java)
-            mIntent.putExtra("KEY_PESO", pesoSeekBar.progress.toString())
-            mIntent.putExtra("KEY_ALTURA", alturaSeekBar.progress.toString())
-            startActivity(mIntent)
-            finish()
+            if (txtPesoDecimal.text == "0.0" || txtAlturaDecimal.text == "0.0"){
+                Toast.makeText(applicationContext, "Apresente sua altura e peso", Toast.LENGTH_LONG).show()
+            }else{
+                val mIntent = Intent(this, ResultadoActivity::class.java)
+                mIntent.putExtra("KEY_PESO", txtPesoDecimal.text)
+                mIntent.putExtra("KEY_ALTURA", txtAlturaDecimal.text)
+                startActivity(mIntent)
+                finish()
+            }
+
+
         }
     }
 }
